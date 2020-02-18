@@ -1,8 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { reducer } from "./state/app";
+import { CounterActionType } from "./state/counter";
 
 function App() {
+  const [state, dispatch] = React.useReducer(reducer, {
+    counter: 100,
+    message: "hello"
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +26,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <p>{state.counter}</p>
+      <button onClick={() => dispatch({ type: CounterActionType.incriment, number: 1})}>Incriment</button>
     </div>
   );
 }

@@ -1,3 +1,17 @@
+# dispatch-example
+
+This is an example React project that illustrates different patterns for managing state in larger applications.  This includes:
+
+* Separating reducers for manager different pieces of the app state
+
+Examples to complete include:
+
+* [ ] Using App Context
+* [ ] Combining reducers
+* [ ] Adding Middleware
+
+## Getting Started
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
