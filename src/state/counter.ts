@@ -1,4 +1,4 @@
-import { AppState } from "./app";
+import React from "react";
 
 export type Counter = number;
 
@@ -8,12 +8,12 @@ export type CounterActions = {
   decriment: (value: Counter) => void;
 };
 
-const incriment = (value: Counter) => (state: AppState) => ({...state, counter: state.counter + value});
+const incriment = (value: Counter) => (state: Counter) => state + value;
 
-export const counterActions = (setState: React.Dispatch<React.SetStateAction<AppState>>): CounterActions => ({
+export const counterActions = (setState: React.Dispatch<React.SetStateAction<Counter>>): CounterActions => ({
   autoIncriment: value => {
     setInterval(() => setState(incriment(value)), 1000);
   },
   incriment: value => setState(incriment(value)),
-  decriment: value => setState((state: AppState) => ({...state, counter: state.counter - value})),
+  decriment: value => setState((state: Counter) => state - value),
 });
