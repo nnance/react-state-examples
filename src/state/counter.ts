@@ -8,13 +8,20 @@ export enum CounterActionType {
 export type CounterAction = { type: CounterActionType; number: number };
 
 export type CounterActions = {
+  autoIncriment: (value: Counter) => void;
   incriment: (value: Counter) => void;
   decriment: (value: Counter) => void;
 };
 
 export const counterActions = {
-  incriment: (number: Counter) => ({ type: CounterActionType.incriment, number }),
-  decriment: (number: Counter) => ({ type: CounterActionType.decriment, number })
+  incriment: (number: Counter) => ({
+    type: CounterActionType.incriment,
+    number
+  }),
+  decriment: (number: Counter) => ({
+    type: CounterActionType.decriment,
+    number
+  })
 };
 
 const initialState: Counter = 0;
