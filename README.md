@@ -1,8 +1,8 @@
-# react-state-example
+# react-state-examples
 
 This is an example React project that illustrates different patterns for managing state in larger applications.  This includes:
 
-* Separating reducers for manager different pieces of the app state
+* Separating reducers for managing different pieces of the app state
 * Using App Context that combines reducers and actions to a single global state
 
 The following branches includes different state management patterns:
