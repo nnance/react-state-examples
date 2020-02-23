@@ -1,16 +1,17 @@
 import React from "react";
-import { Actions } from "./app";
-import { counterActions, CounterAction } from "./counter";
-import { messageActions, MessageAction } from "./message";
+import { Actions, AppState } from "./app";
+import { Counter } from "./counter";
+import { Message } from "./message";
 
-const { incriment, decriment } = counterActions;
-const { setMessage } = messageActions;
+const incriment = (value: Counter) => (state: AppState) => ({...state, counter: state.counter + value});
+const decriment = (value: Counter) => (state: AppState) => ({...state, counter: state.counter - value});
+const setMessage = (message: Message) => (state: AppState) => ({...state, message});
 
-export const applyMiddleware = (dispatch: React.Dispatch<CounterAction | MessageAction>): Actions => ({
+export const applyMiddleware = (setState: React.Dispatch<React.SetStateAction<AppState>>): Actions => ({
   autoIncriment: value => {
-    setInterval(() => dispatch(incriment(value)), 1000);
+    setInterval(() => setState(incriment(value)), 1000);
   },
-  incriment: value => dispatch(incriment(value)),
-  decriment: value => dispatch(decriment(value)),
-  setMessage: msg => dispatch(setMessage(msg))
+  incriment: value => setState(incriment(value)),
+  decriment: value => setState(decriment(value)),
+  setMessage: msg => setState(setMessage(msg))
 });
