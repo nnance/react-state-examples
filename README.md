@@ -7,8 +7,8 @@ This is an example React project that illustrates different patterns for managin
 
 The following branches includes different state management patterns:
 
-* *middleware* - Adds a middleware layer for preprocessing actions
-* *use-state* - Replaces dispatch with Reacts useState and action functions
+* **middleware** - Adds a middleware layer for preprocessing actions
+* **use-state** - Replaces dispatch with Reacts useState and action functions
 
 ## Getting Started
 
