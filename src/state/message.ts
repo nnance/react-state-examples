@@ -9,6 +9,10 @@ export type MessageAction = {
     message: Message
 }
 
+export const MessageActions = {
+    setMessage: (message: string) => ({ type: MessageActionType.setMessage, message })
+}
+
 const initialState: Message = "";
 
 export const messageReducer = (state = initialState, action: MessageAction) => {

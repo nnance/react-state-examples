@@ -7,6 +7,11 @@ export enum CounterActionType {
 
 export type CounterAction = { type: CounterActionType, number: number };
 
+export const CounterActions = {
+    incriment: (value: number) => ({ type: CounterActionType.incriment, number: value }),
+    decriment: (value: number) => ({ type: CounterActionType.decriment, number: value })
+}
+
 const initialState: Counter = 0;
 
 export const counterReducer = (state = initialState, action: CounterAction) => {
