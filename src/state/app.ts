@@ -6,7 +6,7 @@ export type AppState = {
     message: Message
 }
 
-const initialState = {
+export const initialState = {
     counter: 100,
     message: "Started"
 }
