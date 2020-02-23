@@ -1,7 +1,7 @@
 export type Counter = number;
 
 export enum CounterActionType {
-    incriment,
+    incriment = 100,
     decriment
 };
 

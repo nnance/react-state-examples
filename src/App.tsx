@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { reducer } from "./state/app";
 import { CounterActionType } from "./state/counter";
+import { MessageActionType } from "./state/message";
 
 function App() {
   const [state, dispatch] = React.useReducer(reducer, {
@@ -12,22 +12,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <p>{state.counter}</p>
+      <p>{state.message}</p>
       <button onClick={() => dispatch({ type: CounterActionType.incriment, number: 1})}>Incriment</button>
+      <button onClick={() => dispatch({ type: CounterActionType.decriment, number: 1})}>Decriment</button>
+      <button onClick={() => dispatch({ type: MessageActionType.setMessage, message: "Goodbye!"})}>Goodbye</button>
     </div>
   );
 }

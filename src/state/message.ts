@@ -1,7 +1,7 @@
 export type Message = string;
 
 export enum MessageActionType {
-    setMessage
+    setMessage = 200
 }
 
 export type MessageAction = {
