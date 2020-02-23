@@ -1,14 +1,14 @@
-# dispatch-example
+# react-state-example
 
 This is an example React project that illustrates different patterns for managing state in larger applications.  This includes:
 
 * Separating reducers for manager different pieces of the app state
+* Using App Context that combines reducers and actions to a single global state
 
-Examples to complete include:
+The following branches includes different state management patterns:
 
-* [ ] Using App Context
-* [ ] Combining reducers
-* [ ] Adding Middleware
+* *middleware* - Adds a middleware layer for preprocessing actions
+* *use-state* - Replaces dispatch with Reacts useState and action functions
 
 ## Getting Started
 
